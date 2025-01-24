@@ -1,3 +1,5 @@
 # TheGame
 
-AInda em desenvolvimento
+Ainda em desenvolvimento
+
+sendo feito por Uriel, Hudson e Felipe
