@@ -27,19 +27,21 @@ else
 
 #region faces
 	
-if (_up) face = 1;
-if (_down) face = 3;
-if (_left) face = 2;
-if (_right) face = 0;
+if (_left) direcao = "esquerda";
+if (_right) direcao = "direita";
 
-if (_up and _right) face = 4;
-if (_up and _left) face = 1;
-
-if (_down and _right) face = 0;
-if (_down and _left) face = 2;
-
-if (_up and _left and _right) face = 1;
-if (_down and _left and _right) face = 3;
+if(direcao = "esquerda")
+{
+	if (_left) face = 2;
+	if (_up) face = 1;
+	if (_down) face = 3;
+}
+else if (direcao = "direita")
+{
+	if (_right) face = 0;
+	if (_up) face = 4;
+	if (_down) face = 0;
+}
 
 #endregion
 

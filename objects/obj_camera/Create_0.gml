@@ -5,8 +5,8 @@ estado = noone;
 escala = 1;
 cam_x = 0;
 cam_y = 0;
-cam_w = 320;
-cam_h = 180;
+cam_w = 192;
+cam_h = 108;
 
 zoom = function()
 {
@@ -43,7 +43,7 @@ segue_player = function()
 	var _view_h = camera_get_view_height(view_camera[0]);
 	
 	cam_x = alvo.x - _view_w/2;
-	cam_y = alvo.y - _view_h/2;
+	cam_y = alvo.y - sprite_get_height(spr_protagonista_parada_down_right)/2 - _view_h/2;
 	
 	cam_x = clamp(cam_x, 0, room_width - _view_w);
 	cam_y = clamp(cam_y, 0, room_height - _view_h);

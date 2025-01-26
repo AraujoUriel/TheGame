@@ -23,7 +23,7 @@
   ],
   "name":"spr_sofa_sala",
   "nineSlice":null,
-  "origin":7,
+  "origin":9,
   "parent":{
     "name":"obj_cenario",
     "path":"folders/Sprites/obj_cenario.yy",
@@ -76,7 +76,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":28,
-    "yorigin":20,
+    "yorigin":19,
   },
   "swatchColours":null,
   "swfPrecision":0.5,
