@@ -10,8 +10,8 @@
   "name":"obj_cadeira_caida",
   "overriddenProperties":[],
   "parent":{
-    "name":"cenario",
-    "path":"folders/Objetos/cenario.yy",
+    "name":"normais",
+    "path":"folders/Objetos/cenario/normais.yy",
   },
   "parentObjectId":{
     "name":"obj_para_obj",

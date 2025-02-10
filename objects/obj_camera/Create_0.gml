@@ -2,28 +2,13 @@
 // Você pode escrever seu código neste editor
 alvo = noone;
 estado = noone;
-escala = 1;
 cam_x = 0;
 cam_y = 0;
-cam_w = 192;
-cam_h = 108;
+cam_w = 384;
+cam_h = 216;
 
-zoom = function()
-{
-	escala = clamp(escala, 0.6, 1.2);
-	
-	camera_set_view_size(view_camera[0], cam_w * escala, cam_h * escala);
-	
-	if(mouse_wheel_down())
-	{
-		escala += 0.05;
-	}
-	
-	if(mouse_wheel_up())
-	{
-		escala -= 0.05;
-	}
-}
+
+camera_set_view_size(view_camera[0], cam_w, cam_h);
 
 segue_player = function()
 {

@@ -5,8 +5,8 @@ event_inherited();
 //Variaveis
 velh = 0;
 velv = 0;
-velocidade = 1.8;
-acel = 0.2;
+velocidade = 3.6;
+acel = 0.4;
 
 #endregion
 
@@ -18,12 +18,20 @@ sprite = sprite_index;
 sprites = [];
 val = 0;
 direcao = "direita";
+item = noone;
+sprite_item = noone;
+lado_item = 20;
+num = 0;
 
 sprites =	[
 			  //Parado
 			  [spr_protagonista_parada_down_right, spr_protagonista_parada_down_left, spr_protagonista_parada_up_left, spr_protagonista_parada_up_right],
 			  //Andando
-			  [spr_protagonista_andando_down_right, spr_protagonista_andando_up, spr_protagonista_andando_down_left, spr_protagonista_andando_down_left, spr_protagonista_andando_up_right],
+			  [spr_protagonista_andando_down_right, spr_protagonista_andando_down_left, spr_protagonista_andando_up, spr_protagonista_andando_up_right, spr_protagonista_andando_down_left],
+			  //Parado_segurando
+			  [spr_protagonista_parada_pegando_down_right, spr_protagonista_parada_pegando_down_left, spr_protagonista_parada_pegando_up_left, spr_protagonista_parada_pegando_up_right],
+			  //Andando_segurando
+			  [spr_protagonista_andando_pegando_down_right, spr_protagonista_andando_pegando_down_left, spr_protagonista_andando_pegando_up_left, spr_protagonista_andando_pegando_up_right, spr_protagonista_andando_pegando_down_left],
 			];
 
 
@@ -37,15 +45,19 @@ estado_parado = function()
 	velv = 0;
 	velh = 0;
 	
-	if (face = 4) face = 3;
+	if (face = 4) face = 1;
 	
-	if(direcao = "esquerda" and face = 2)
+	if(array_length(global.itens) == 0)
 	{
-		face = 1;
+		sprite =  sprites[0][face];
+	}
+	else
+	{
+		sprite =  sprites[2][face];
 	}
 	
 	val = 4;
-	sprite =  sprites[0][face];
+	
 	sprite_set_speed(sprite_index, val, spritespeed_framespersecond);
 	
 	if ((_up xor _down) or (_left xor _right))
@@ -57,7 +69,7 @@ estado_parado = function()
 estado_movendo = function()
 {
 	val = 11;
-	acel = 0.2;
+	acel = 0.4;
 	
 	if(direcao == noone)
 	{
@@ -71,39 +83,232 @@ estado_movendo = function()
 
 		if(direcao = "esquerda")
 		{
-			if (_left) face = 2;
-			if (_up) face = 1;
-			if (_down) face = 3;
+			if (_left) face = 1;
+			if (_up) face = 2;
+			if (_down) face = 4;
 		}
 		else if (direcao = "direita")
 		{
 			if (_right) face = 0;
-			if (_up) face = 4;
+			if (_up) face = 3;
 			if (_down) face = 0;
 		}
 	}
 	
-	sprite =  sprites[1][face];
+	if(array_length(global.itens) == 0)
+	{
+		sprite =  sprites[1][face];
+	}
+	else
+	{
+		sprite =  sprites[3][face];
+	}
+	
 	sprite_set_speed(sprite_index, val, spritespeed_framespersecond);
 	
 	if (abs(velv) < 0.2 and abs(velh) < 0.2)
 	{
 		estado = estado_parado;
-		
-		
-		if (direcao = "esquerda" and face = 1) 
-		{
-			face = 2;
-			direcao = noone;
-		}
-		else if (direcao = "esquerda" and face = 3 or face = 2)
-		{
-			face = 1;
-			direcao = noone;
-		}
 	}
 }
 
 estado = estado_parado
+
+escolha_item = function()
+{
+	if(array_length(global.itens) != 0)
+	{
+		item = global.itens[num];
+		
+		if(mouse_wheel_up())
+		{
+			if(array_length(global.itens) - 1 > num)
+			{
+				num += 1;
+			}
+			else
+			{
+				num = 0;
+			}
+		}
+	
+		if(mouse_wheel_down())
+		{
+			if(num != 0)
+			{
+				num -= 1;
+			}
+			else
+			{
+				num = array_length(global.itens) - 1;
+			}
+		}
+		
+		switch(item)
+		{
+			case "chave":
+				
+				sprite_item = spr_chave;
+		
+				if (estado == estado_parado)
+				{
+					switch(face)
+					{
+						case 0: lado_item = 20; break;
+						case 1: lado_item = -20; break;
+						case 2: lado_item = -8; break;
+						case 3: lado_item = 8; break;
+					}
+				}
+		
+				if (estado == estado_movendo)
+				{
+					switch(face)
+					{
+						case 0: lado_item = 20; break;
+						case 1: lado_item = -20; break;
+						case 2: lado_item = -8; break;
+						case 3: lado_item = 8; break;
+						case 4: lado_item = -20; break;
+					}
+				}
+				
+			break;
+			
+			case "joia":
+				
+				sprite_item = spr_joia;
+		
+				if (estado == estado_parado)
+				{
+					switch(face)
+					{
+						case 0: lado_item = 16; break;
+						case 1: lado_item = -16; break;
+						case 2: lado_item = -8; break;
+						case 3: lado_item = 8; break;
+					}
+				}
+		
+				if (estado == estado_movendo)
+				{
+					switch(face)
+					{
+						case 0: lado_item = 16; break;
+						case 1: lado_item = -16; break;
+						case 2: lado_item = -8; break;
+						case 3: lado_item = 8; break;
+						case 4: lado_item = -16; break;
+					}
+				}
+				
+			break;
+			
+			case "joia2":
+				
+				sprite_item = spr_joia2;
+		
+				if (estado == estado_parado)
+				{
+					switch(face)
+					{
+						case 0: lado_item = 16; break;
+						case 1: lado_item = -16; break;
+						case 2: lado_item = -8; break;
+						case 3: lado_item = 8; break;
+					}
+				}
+		
+				if (estado == estado_movendo)
+				{
+					switch(face)
+					{
+						case 0: lado_item = 16; break;
+						case 1: lado_item = -18; break;
+						case 2: lado_item = -8; break;
+						case 3: lado_item = 8; break;
+						case 4: lado_item = -18; break;
+					}
+				}
+				
+			break;
+			
+			case "joia3":
+				
+				sprite_item = spr_joia3;
+		
+				if (estado == estado_parado)
+				{
+					switch(face)
+					{
+						case 0: lado_item = 20; break;
+						case 1: lado_item = -20; break;
+						case 2: lado_item = -8; break;
+						case 3: lado_item = 8; break;
+					}
+				}
+		
+				if (estado == estado_movendo)
+				{
+					switch(face)
+					{
+						case 0: lado_item = 20; break;
+						case 1: lado_item = -20; break;
+						case 2: lado_item = -8; break;
+						case 3: lado_item = 8; break;
+						case 4: lado_item = -20; break;
+					}
+				}
+				
+			break;
+		}
+		
+		if(keyboard_check_pressed(ord("G")))
+		{
+			switch(item)
+			{
+				case "chave":
+				
+					var _obj = instance_create_layer(x, y + 20, "ins_objs", obj_chave);
+					_obj.room_permanencia = room;
+				
+				break;
+				
+				case "joia":
+				
+					var _obj = instance_create_layer(x, y + 20, "ins_objs", obj_joia);
+					_obj.room_permanencia = room;
+				
+				break;
+				
+				case "joia2":
+				
+					var _obj = instance_create_layer(x, y + 20, "ins_objs", obj_joia);
+					_obj.nome = "joia2";
+					_obj.sprite = spr_joia2;
+					_obj.room_permanencia = room;
+				
+				break;
+				
+				case "joia3":
+				
+					var _obj = instance_create_layer(x, y + 20, "ins_objs", obj_joia);
+					_obj.nome = "joia3";
+					_obj.sprite = spr_joia3;
+					_obj.room_permanencia = room;
+				
+				break;
+			}
+		
+			array_delete(global.itens, num, num + 1);
+			if(num != 0){num -= 1;}
+		}
+	}
+	else
+	{
+		sprite_item = noone;
+		lado_item = noone;
+	}
+}
 
 #endregion

@@ -32,17 +32,17 @@ if (_right) direcao = "direita";
 
 if(direcao = "esquerda")
 {
-	if (_left) face = 2;
-	if (_up) face = 1;
-	if (_down) face = 3;
+	if (_left) face = 1;
+	if (_up) face = 2;
+	if (_down) face = 4;
 }
 else if (direcao = "direita")
 {
 	if (_right) face = 0;
-	if (_up) face = 4;
+	if (_up) face = 3;
 	if (_down) face = 0;
 }
 
 #endregion
-
 estado();
+escolha_item();
