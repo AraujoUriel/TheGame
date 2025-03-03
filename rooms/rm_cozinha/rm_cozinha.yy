@@ -22,6 +22,7 @@
     {"name":"inst_456D5FC2","path":"rooms/rm_cozinha/rm_cozinha.yy",},
     {"name":"inst_191079EC","path":"rooms/rm_cozinha/rm_cozinha.yy",},
     {"name":"inst_3F582B99","path":"rooms/rm_cozinha/rm_cozinha.yy",},
+    {"name":"inst_7032716E","path":"rooms/rm_cozinha/rm_cozinha.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -49,6 +50,7 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_porta_lado","path":"objects/obj_porta_lado/obj_porta_lado.yy",},"propertyId":{"name":"destino_rm","path":"objects/obj_porta_lado/obj_porta_lado.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"rm_dispenca",},
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_porta_lado","path":"objects/obj_porta_lado/obj_porta_lado.yy",},"propertyId":{"name":"inverter_x","path":"objects/obj_porta_lado/obj_porta_lado.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":15.0,"y":154.0,},
+        {"$GMRInstance":"v1","%Name":"inst_7032716E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7032716E","objectId":{"name":"obj_relogio_cozinha","path":"objects/obj_relogio_cozinha/obj_relogio_cozinha.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":140.0,"y":8.0,},
       ],"layers":[],"name":"ins_objs","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_31A48740","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_31A48740","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":6.25,"scaleY":1.25,"spriteId":{"name":"spr_parede_cozinha","path":"sprites/spr_parede_cozinha/spr_parede_cozinha.yy",},"x":0.0,"y":0.0,},
@@ -58,7 +60,7 @@
         {"$GMRInstance":"v1","%Name":"inst_3598FD28","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3598FD28","objectId":{"name":"obj_colisao","path":"objects/obj_colisao/obj_colisao.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":6.6875005,"scaleY":0.1875,"x":0.0,"y":276.0,},
         {"$GMRInstance":"v1","%Name":"inst_607C0E9C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_607C0E9C","objectId":{"name":"obj_colisao","path":"objects/obj_colisao/obj_colisao.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.125,"scaleY":4.375,"x":400.0,"y":-3.9999847,},
         {"$GMRInstance":"v1","%Name":"inst_14D97A31","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_14D97A31","objectId":{"name":"obj_colisao","path":"objects/obj_colisao/obj_colisao.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.125,"scaleY":3.9375002,"x":-8.0,"y":32.000004,},
-      ],"layers":[],"name":"ins_colisao","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+      ],"layers":[],"name":"ins_colisao","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":false,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"spr_chao_cozinha","path":"sprites/spr_chao_cozinha/spr_chao_cozinha.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
   ],
   "name":"rm_cozinha",

@@ -6,7 +6,11 @@
 var _parede = instance_place(x + velh, y, obj_colisao);
 var _obj = instance_place(x + velh, y, obj_para_obj);
 
-if (_parede or _obj)
+if(_obj == inst_58D9EBBD and !_parede)
+{
+	
+}
+else if (_parede or _obj)
 {	
 	velh = 0
 }
@@ -15,8 +19,12 @@ x += velh;
 // colisão vertical
 _parede = instance_place(x, y + velv, obj_colisao);
 _obj = instance_place(x, y + velv, obj_para_obj);
+
+if(_obj == inst_58D9EBBD and !_parede)
+{
 	
-if (_parede or _obj)
+}
+else if (_parede or _obj)
 {
 	velv = 0
 }

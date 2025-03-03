@@ -2,9 +2,8 @@
 // Você pode escrever seu código neste editor
 if(instance_exists(obj_ambientacao))
 {
-	if(obj_ambientacao.luz_sala == false)
+	if(global.energia == false or room == rm)
 	{
-		
 		if(estado == "pego")
 		{
 			var _meu_array = global.itens;

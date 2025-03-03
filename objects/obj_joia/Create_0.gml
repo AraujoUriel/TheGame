@@ -10,4 +10,4 @@ estado = noone;
 mudanca_de_cor = true;
 alarm[0] = 90;
 
-room_permanencia = rm_sala_principal;
+room_permanencia = rm_quarto_principal;

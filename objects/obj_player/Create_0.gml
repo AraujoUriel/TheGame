@@ -22,6 +22,7 @@ item = noone;
 sprite_item = noone;
 lado_item = 20;
 num = 0;
+animacao = noone;
 
 sprites =	[
 			  //Parado
@@ -71,6 +72,11 @@ estado_movendo = function()
 	val = 11;
 	acel = 0.4;
 	
+	/*if!(audio_is_playing(snd_passos))
+	{
+		audio_play_sound(snd_passos, 2, false);
+	}*/
+	
 	if(direcao == noone)
 	{
 		if(face == 1 or face == 2) direcao = "esquerda";
@@ -111,6 +117,72 @@ estado_movendo = function()
 		estado = estado_parado;
 	}
 }
+
+estado_animacao = function()
+{
+	switch(animacao)
+	{
+		case "afogando":
+		
+			if(sprite == spr_protagonista_afogado)
+			{
+				break;
+			}
+			
+			sprite = spr_protagonista_afogando;
+			val = 3;
+			sprite_set_speed(sprite_index, val, spritespeed_framespersecond);
+		
+			if(image_index >= image_number - 5)
+			{
+				obj_ambientacao.reset = true; 
+				animacao = noone;
+				sprite = spr_protagonista_afogado;
+				estado = estado_noone;
+				image_index = 0;
+			}
+		break;
+		
+		case "fatiada":
+		
+			if(sprite == spr_protagonista_fatiada_right or sprite == spr_protagonista_fatiada_left)
+			{
+				break;
+			}
+		
+			if(direcao = "direita")
+			{
+				sprite = spr_protagonista_morrendo_fatiada_right;
+			}
+			else
+			{
+				sprite = spr_protagonista_morrendo_fatiada_left;
+			}
+			
+			val = 8;
+			sprite_set_speed(sprite_index, val, spritespeed_framespersecond);
+		
+			if(image_index >= image_number - 1)
+			{
+				obj_ambientacao.reset = true; 
+				animacao = noone;
+				estado = estado_noone;
+				image_index = 0;
+				
+				if(direcao = "direita")
+				{
+					sprite = spr_protagonista_fatiada_right;
+				}
+				else
+				{
+					sprite = spr_protagonista_fatiada_left;
+				}
+			}
+		break;
+	}
+}
+
+estado_noone = function(){}
 
 estado = estado_parado
 

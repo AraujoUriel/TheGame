@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_protagonista_andando_down_right",
-    "path":"sprites/spr_protagonista_andando_down_right/spr_protagonista_andando_down_right.yy",
+    "name":"spr_protagonista",
+    "path":"sprites/spr_protagonista/spr_protagonista.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -10,8 +10,8 @@
   "name":"obj_escrivaninha",
   "overriddenProperties":[],
   "parent":{
-    "name":"normais",
-    "path":"folders/Objetos/cenario/normais.yy",
+    "name":"interagivel",
+    "path":"folders/Objetos/cenario/interagivel.yy",
   },
   "parentObjectId":{
     "name":"obj_para_obj",

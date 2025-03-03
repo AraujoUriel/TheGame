@@ -45,4 +45,4 @@ sem_alvo = function()
 }
 
 
-estado = segue_player;
+estado = sem_alvo;

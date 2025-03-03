@@ -1,5 +1,7 @@
  /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
+event_inherited();
+
 if(room == room_permanencia)
 {
 	if(estado == "pego")

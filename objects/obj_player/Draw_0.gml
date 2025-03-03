@@ -26,8 +26,19 @@ if (distance_to_object(obj_para_interacao) <= 40)
 {
 	var _obj = instance_nearest(x, y, obj_para_interacao);
 	
-	if (keyboard_check_pressed(ord("F")))
+	if!(_obj == obj_espelho_suite)
 	{
-		_obj.interacao = true;
+		if (keyboard_check_pressed(ord("F")))
+		{
+			_obj.interacao = true;
+		}
+	}
+	
+	if(distance_to_object(obj_espelho_suite) <= 30 and item == "martelo")
+	{
+		if (keyboard_check_pressed(ord("F")))
+		{
+			_obj.interacao_espelho = true;
+		}
 	}
 }

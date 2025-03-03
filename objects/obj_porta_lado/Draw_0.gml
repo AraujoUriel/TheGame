@@ -22,7 +22,7 @@ else
 		draw_sprite_ext(sprite, image_index, x, y, 1, 1, image_angle, image_blend, image_alpha);
 	}
 	
-	if(image_index >= image_number - 1)
+	if(image_index > image_number - 1)
 	{
 		animar = false;
 	}
